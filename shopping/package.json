@@ -10,7 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@nextui-org/react": "^2.1.8",
+    "@material-tailwind/react": "^2.1.1",
+    "@nextui-org/react": "^2.1.10",
     "framer-motion": "^10.16.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

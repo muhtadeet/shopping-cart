@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+const withMT = require("@material-tailwind/react/utils/withMT")
+const { nextui } = require("@nextui-org/react")
+export default withMT({
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -8,6 +10,6 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
-}
+  plugins: [nextui()],
+})
 

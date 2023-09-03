@@ -1,72 +1,47 @@
-import React from "react";
-import {Navbar, NavbarBrand, NavbarContent, NavbarMenuToggle, NavbarItem, NavbarMenuItem, NavbarMenu, Link} from "@nextui-org/react";
-// import Logo from './Logo.jsx';
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuToggle, NavbarMenuItem, Link, Button} from "@nextui-org/react";
 
-export default function Navmenu() {
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+export default function App() {
+  const menuItems = [
+    "Products",
+    "Categories",
+  ];
 
-    return (
-      <Navbar isBordered isMenuOpen={isMenuOpen} 
-              shouldHideOnScroll onMenuOpenChange={setIsMenuOpen}>
-        <NavbarContent>
-          <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="sm:hidden"
-          />
-          <NavbarBrand>
-            <Link href="/home">
-              {/* <Logo /> */}
-              <p className="font-bold text-inherit">Name</p>
+  return (
+    <Navbar shouldHideOnScroll className="p-3">
+      <NavbarContent justify="start">
+        <NavbarMenuToggle className="transition duration-300 ease-in-out hover:text-blue-gray-400"/>
+      </NavbarContent>
+      <NavbarContent className="sm:hidden pr-3" justify="center">
+        <NavbarBrand>
+          <p className="font-bold text-inherit">A2Z</p>
+        </NavbarBrand>
+      </NavbarContent>
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarBrand>
+          <p className="font-bold text-inherit">A2Z</p>
+        </NavbarBrand>
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <NavbarItem>
+          <Button as={Link} color="warning" href="#" variant="flat">
+            Cart
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
+
+      <NavbarMenu className="max-w-[40%] sm:max-w-sm z-10">
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link
+              className="w-full pt-3 text-black transition duration-300 ease-in-out hover:text-blue-gray-400"
+              href="#"
+              size="lg"
+            >
+              {item}
             </Link>
-          </NavbarBrand>
-        </NavbarContent>
-  
-        <NavbarContent className="hidden sm:flex gap-3" justify="center">
-          <NavbarItem>
-            <Link href="/home" >
-              <p className='font-abc p-10 text-[1.3rem] text-black transition ease-in-out delay-150 hover:text-gray-500 duration-300'>Home</p>
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link href="/photos">
-              <p className='font-abc p-10 text-[1.3rem] text-black transition ease-in-out delay-150 hover:text-gray-500 duration-300'>Products</p>
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link href="/arts">
-              <p className='font-abc p-10 text-[1.3rem] text-black transition ease-in-out delay-150 hover:text-gray-500 duration-300'>Arts</p>
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link href="/contact">
-              <p className='font-abc p-10 text-[1.3rem] text-black transition ease-in-out delay-150 hover:text-gray-500 duration-300'>About</p>
-            </Link>
-          </NavbarItem>
-        </NavbarContent>
-  
-        <NavbarMenu>
-            <NavbarMenuItem>
-              <Link href="/home" className='font-abc p-5 text-[1.3rem] text-black transition ease-in-out delay-150 hover:text-gray-500 duration-300'>
-                Home
-              </Link>
-            </NavbarMenuItem>
-            <NavbarMenuItem>
-              <Link href="/photos" className='font-abc p-5 text-[1.3rem] text-black transition ease-in-out delay-150 hover:text-gray-500 duration-300'>
-                Photos
-              </Link>
-            </NavbarMenuItem>
-            <NavbarMenuItem>
-              <Link href="/arts" className='font-abc p-5 text-[1.3rem] text-black transition ease-in-out delay-150 hover:text-gray-500 duration-300'>
-                Arts
-              </Link>
-            </NavbarMenuItem>
-            <NavbarMenuItem>
-              <Link href="/contact" className='font-abc p-5 text-[1.3rem] text-black transition ease-in-out delay-150 hover:text-gray-500 duration-300'>
-              Contact
-              </Link>
-            </NavbarMenuItem>
-        </NavbarMenu>
-        
-      </Navbar>
-    )
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
+  );
 }
