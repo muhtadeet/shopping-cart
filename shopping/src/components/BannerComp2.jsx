@@ -10,17 +10,6 @@ import {
     return (
       <div className="flex justify-center my-10">
         <Card className=" w-[30rem] md:w-full max-w-4xl mx-5 flex-row">
-          <CardHeader
-            shadow={false}
-            floated={false}
-            className="m-0 w-2/5 shrink-0 hidden md:block rounded-r-none"
-          >
-            <img
-              src="https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt="card-image"
-              className="h-full w-full object-cover"
-            />
-          </CardHeader>
           <CardBody>
             <Typography variant="h4" color="blue-gray" className="mb-2">
             JUST FOR YOU
@@ -34,6 +23,17 @@ import {
               </Button>
             </a>
           </CardBody>
+          <CardHeader
+            shadow={false}
+            floated={false}
+            className="m-0 w-2/5 shrink-0 hidden md:block rounded-l-none"
+          >
+            <img
+              src="https://images.pexels.com/photos/262034/pexels-photo-262034.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="card-image"
+              className="h-full w-full object-cover"
+            />
+          </CardHeader>
         </Card>
       </div>
     );

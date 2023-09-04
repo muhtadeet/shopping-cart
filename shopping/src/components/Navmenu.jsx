@@ -7,7 +7,7 @@ export default function Navmenu() {
       <NavbarContent justify="start">
         <NavbarMenuToggle className="transition duration-300 ease-in-out hover:text-blue-gray-400"/>
       </NavbarContent>
-      <NavbarContent className="pr:5 sm:pr-3 pb-3 gap-4" justify="center">
+      <NavbarContent className="pr:5 sm:pr-0 pb-3 gap-4" justify="center">
         <NavbarBrand>
         <Link
               className="w-full pt-3 text-black transition duration-300 ease-in-out hover:text-blue-gray-400"

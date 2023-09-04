@@ -5,7 +5,7 @@ export default function FooterWithLogo() {
     <footer className="w-full bg-gray-900 mt-10 p-8">
       <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-64 text-center">
         <b className="text-white">A2Z</b>
-        <ul className="flex flex-wrap items-center gap-y-2 gap-x-10">
+        <ul className="flex flex-col sm:flex-row flex-wrap items-center gap-y-2 gap-x-10">
           <li>
             <Typography
               as="a"
@@ -21,7 +21,7 @@ export default function FooterWithLogo() {
               as="a"
               href="#"
               color="white"
-              className="ml-16 transition duration-300 ease-in-out hover:text-blue-gray-400"
+              className="sm:ml-16 ml-0 transition duration-300 ease-in-out hover:text-blue-gray-400"
             >
               FAQs
             </Typography>
