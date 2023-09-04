@@ -6,7 +6,7 @@ import {
     Button,
   } from "@material-tailwind/react";
    
-  export default function HorizontalCard() {
+  export default function BannerComp() {
     return (
       <div className="flex justify-center my-10">
         <Card className=" w-[30rem] md:w-full max-w-4xl flex-row">
