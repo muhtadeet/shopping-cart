@@ -1,6 +1,6 @@
 import Navmenu from "./Navmenu";
 import Carousel from './Carouselcomp'
-import Banner from './BannerComp'
+import BannerComp from './BannerComp'
 import FooterComp from './FooterComp'
 import {Card, CardBody, CardFooter, Image} from "@nextui-org/react";
 
@@ -79,7 +79,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Banner/>
+      <BannerComp/>
 
         
 
