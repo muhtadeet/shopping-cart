@@ -1,10 +1,8 @@
-// import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
-// import Photos from './components/Photos'
-// import Arts from './components/Arts'
-// import Contact from './components/Contact'
-// import Navmenu from './components/Navmenu'
+import Products from './components/Products'
+import Categories from './components/Categories'
+import Contact from './components/Contact'
 
 export default function App() {
   return (
@@ -14,9 +12,9 @@ export default function App() {
           {/* <Navmenu /> */}
           <Route index element={<Home />} />
           <Route path='/home' element={<Home />} />
-          {/* <Route path='/photos' element={<Photos />} />
-          <Route path='/arts' element={<Arts />} />
-          <Route path='/contact' element={<Contact />} /> */}
+          <Route path='/products' element={<Products />} />
+          <Route path='/categories' element={<Categories />} />
+          <Route path='/contact' element={<Contact />} />
       </Routes>
       </BrowserRouter>
     </>

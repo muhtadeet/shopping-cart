@@ -1,6 +1,6 @@
 import { Carousel } from "@material-tailwind/react";
 
-export default function Carouselcomp() {
+export default function CarouselComp() {
   return (
     <div>
       <div className="flex justify-center m-5">
