@@ -44,15 +44,6 @@ export default function Navmenu() {
               Categories
             </Link>
           </NavbarMenuItem>
-          <NavbarMenuItem>
-            <Link
-              className="w-full pt-3 text-black transition duration-300 ease-in-out hover:text-blue-gray-400"
-              href="/contact"
-              size="lg"
-            >
-              Contact
-            </Link>
-          </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   );

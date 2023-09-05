@@ -1,16 +1,46 @@
-import Navmenu from './Navmenu'
-import FooterComp from './FooterComp'
-import {Accordion, AccordionItem, Card, CardHeader, CardBody, CardFooter, Divider, Link, Image} from "@nextui-org/react"
+import {Accordion, AccordionItem, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Link} from "@nextui-org/react";
 
-export default function Contact() {
+export default function FAQs() {
+  const {isOpen, onOpen, onOpenChange} = useDisclosure();
   const defaultContent =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+
   return (
-    <div>
-      <Navmenu/>
-      <b className="flex justify-center text-xl m-7">FAQs</b>
-        <div className='flex justify-center m-5 xl:mx-24  2xl:mx-80'>
-            <Accordion
+    <>
+      <Link className="text-white cursor-pointer transition duration-300 ease-in-out hover:text-blue-gray-400" onPress={onOpen}>FAQs</Link>
+      <Modal 
+        backdrop="blur" 
+        isOpen={isOpen} 
+        isKeyboardDismissDisabled
+        hideCloseButton
+        onOpenChange={onOpenChange}
+        motionProps={{
+          variants: {
+            enter: {
+              y: 0,
+              opacity: 1,
+              transition: {
+                duration: 0.3,
+                ease: "easeOut",
+              },
+            },
+            exit: {
+              y: -20,
+              opacity: 0,
+              transition: {
+                duration: 0.2,
+                ease: "easeIn",
+              },
+            },
+          }
+        }}
+      >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1"><b className="flex justify-center m-3">FAQs</b></ModalHeader>
+              <ModalBody>
+              <Accordion
               variant="shadow"
               motionProps={{
                 variants: {
@@ -59,40 +89,16 @@ export default function Contact() {
                 {defaultContent}
               </AccordionItem>
             </Accordion>
-        </div>
-        <b className="flex justify-center text-xl mt-16 mb-7">Contact</b>
-        <div className='flex justify-center m-5'>
-        <Card className="max-w-[700px] px-10">
-          <CardHeader className="flex gap-3">
-          <Image
-            alt="logo"
-            height={40}
-            radius="sm"
-            src=""
-            width={40}
-          />
-          <div className="flex flex-col">
-            <p className="text-md">A2Z</p>
-            <p className="text-small text-default-500">a2z.org</p>
-          </div>
-          </CardHeader>
-          <Divider/>
-          <CardBody>
-            <p>Phone: +123 213 4038</p>
-          </CardBody>
-          <Divider/>
-          <CardFooter>
-            <Link
-              isExternal
-              showAnchorIcon
-              href=""
-            >
-              Email us
-            </Link>
-          </CardFooter>
-        </Card>
-        </div>
-        <FooterComp/>
-      </div>
-  )
+              </ModalBody>
+              <ModalFooter>
+                <Button className="text-black hover:text-danger" color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
+    </>
+  );
 }

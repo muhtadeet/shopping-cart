@@ -1,4 +1,7 @@
 import { Typography } from "@material-tailwind/react";
+import FAQs from "./FAQs";
+import ContactMod from './ContactMod'
+import AboutUs from './AboutUs'
  
 export default function FooterWithLogo() {
   return (
@@ -9,31 +12,28 @@ export default function FooterWithLogo() {
           <li>
             <Typography
               as="a"
-              href="/contact"
               color="white"
               className="transition duration-300 ease-in-out hover:text-blue-gray-400"
             >
-              About Us
+              <AboutUs/>
             </Typography>
           </li>
           <li>
             <Typography
               as="a"
-              href="/contact"
               color="white"
               className="sm:ml-4 transition duration-300 ease-in-out hover:text-blue-gray-400"
             >
-              FAQs
+              <FAQs/>
             </Typography>
           </li>
           <li>
             <Typography
               as="a"
-              href="/contact"
               color="white"
               className="transition duration-300 ease-in-out hover:text-blue-gray-400"
             >
-              Contact Us
+              <ContactMod/>
             </Typography>
           </li>
         </ul>
