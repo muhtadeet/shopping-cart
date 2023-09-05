@@ -9,7 +9,7 @@ export default function FooterWithLogo() {
           <li>
             <Typography
               as="a"
-              href="#"
+              href="/contact"
               color="white"
               className="transition duration-300 ease-in-out hover:text-blue-gray-400"
             >
@@ -19,21 +19,11 @@ export default function FooterWithLogo() {
           <li>
             <Typography
               as="a"
-              href="#"
+              href="/contact"
               color="white"
-              className="sm:ml-16 ml-0 transition duration-300 ease-in-out hover:text-blue-gray-400"
+              className="sm:ml-4 transition duration-300 ease-in-out hover:text-blue-gray-400"
             >
               FAQs
-            </Typography>
-          </li>
-          <li>
-            <Typography
-              as="a"
-              href="#"
-              color="white"
-              className="transition duration-300 ease-in-out hover:text-blue-gray-400"
-            >
-              
             </Typography>
           </li>
           <li>
