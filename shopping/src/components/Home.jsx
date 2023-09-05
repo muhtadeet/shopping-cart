@@ -48,6 +48,28 @@ export default function Home() {
       price: "$12.20",
     },
   ];
+  const list2 = [
+    {
+      title: "Avocado",
+      img: "/images/fruit-5.jpeg",
+      price: "$15.70",
+    },
+    {
+      title: "Lemon 2",
+      img: "/images/fruit-6.jpeg",
+      price: "$8.00",
+    },
+    {
+      title: "Banana",
+      img: "/images/fruit-7.jpeg",
+      price: "$7.50",
+    },
+    {
+      title: "Watermelon",
+      img: "/images/fruit-8.jpeg",
+      price: "$12.20",
+    },
+  ];
 
   return (
     <div>
@@ -82,7 +104,29 @@ export default function Home() {
 
       <BannerComp/>
 
-        
+      <b className="flex justify-center text-xl m-7">You might also like</b>
+      <div className="flex justify-center">
+        <div className="gap-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-7 xl:gap-16">
+          {list2.map((item, index) => (
+            <Card shadow="sm" key={index} isPressable onPress={() => console.log("item pressed")}>
+              <CardBody className="overflow-visible p-0">
+                <Image
+                  shadow="sm"
+                  radius="lg"
+                  width="100%"
+                  alt={item.title}
+                  className="max-w-[200px] w-[170px] object-cover h-[180px]"
+                  src={item.img}
+                />
+              </CardBody>
+              <CardFooter className="text-small justify-between">
+                <b>{item.title}</b>
+                <p className="text-default-500">{item.price}</p>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+      </div>
       
       <BannerComp2/>
       

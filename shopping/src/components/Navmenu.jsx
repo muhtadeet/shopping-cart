@@ -1,4 +1,5 @@
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuToggle, NavbarMenuItem, Link, Button} from "@nextui-org/react";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuToggle, NavbarMenuItem, Link} from "@nextui-org/react";
+import Cartmenu from './CartComponent'
 
 export default function Navmenu() {
 
@@ -20,9 +21,7 @@ export default function Navmenu() {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button as={Link} color="warning" href="#" variant="flat">
-            Cart
-          </Button>
+          <Cartmenu/>
         </NavbarItem>
       </NavbarContent>
 

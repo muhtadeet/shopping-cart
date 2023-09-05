@@ -1,41 +1,167 @@
-import {Tabs, Tab, Card, CardBody} from "@nextui-org/react";
+import {Tabs, Tab, Card, CardBody, Image, CardFooter} from "@nextui-org/react";
 import Navmenu from "./Navmenu";
 import FooterComp from './FooterComp'
 
 export default function Categories() {
-  let tabs = [
+  const list = [
     {
-      id: "all",
-      label: "All",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      title: "Orange",
+      img: "/images/fruit-1.jpeg",
+      price: "$5.50",
     },
     {
-      id: "electronics",
-      label: "Electronics",
-      content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+      title: "Tangerine",
+      img: "/images/fruit-2.jpeg",
+      price: "$3.00",
     },
     {
-      id: "skinCare",
-      label: "Skin Care",
-      content: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    }
+      title: "Raspberry",
+      img: "/images/fruit-3.jpeg",
+      price: "$10.00",
+    },
+    {
+      title: "Lemon",
+      img: "/images/fruit-4.jpeg",
+      price: "$5.30",
+    },
+    {
+      title: "Avocado",
+      img: "/images/fruit-5.jpeg",
+      price: "$15.70",
+    },
+    {
+      title: "Lemon 2",
+      img: "/images/fruit-6.jpeg",
+      price: "$8.00",
+    },
+    {
+      title: "Banana",
+      img: "/images/fruit-7.jpeg",
+      price: "$7.50",
+    },
+    {
+      title: "Watermelon",
+      img: "/images/fruit-8.jpeg",
+      price: "$12.20",
+    },
+  ];
+  const listE = [
+    {
+      title: "Lemon 2",
+      img: "/images/fruit-6.jpeg",
+      price: "$8.00",
+    },
+    {
+      title: "Banana",
+      img: "/images/fruit-7.jpeg",
+      price: "$7.50",
+    },
+    {
+      title: "Watermelon",
+      img: "/images/fruit-8.jpeg",
+      price: "$12.20",
+    },
+  ];
+  const listS = [
+    {
+      title: "Orange",
+      img: "/images/fruit-1.jpeg",
+      price: "$5.50",
+    },
+    {
+      title: "Tangerine",
+      img: "/images/fruit-2.jpeg",
+      price: "$3.00",
+    },
+    {
+      title: "Raspberry",
+      img: "/images/fruit-3.jpeg",
+      price: "$10.00",
+    },
   ];
 
   return (
     <div>
       <Navmenu/>
-      <div className="flex justify-center h-[70vh]">
-        <div className="w-full max-w-4xl mx-5 flex-col">
-          <Tabs aria-label="Dynamic tabs" items={tabs}>
-            {(item) => (
-              <Tab key={item.id} title={item.label}>
-                <Card>
-                  <CardBody>
-                    {item.content}
-                  </CardBody>
-                </Card>  
+
+      <b className="flex justify-center text-xl m-7">Categories</b>
+      <div className="flex justify-center">
+        <div className="w-full max-w-4xl mx-5 flex-col sm:min-h-[58vh]">
+          <Tabs>
+            
+              <Tab key="all" title="All">
+                <div className="flex justify-center">
+                  <div className="gap-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-7 xl:gap-16">
+                    {list.map((item, index) => (
+                      <Card className="flex justify-start" shadow="sm" key={index} isPressable onPress={() => console.log("item pressed")}>
+                        <CardBody className="overflow-visible p-0">
+                          <Image
+                            shadow="sm"
+                            radius="lg"
+                            width="100%"
+                            alt={item.title}
+                            className="max-w-[200px] w-[170px] object-cover h-[180px]"
+                            src={item.img}
+                          />
+                        </CardBody>
+                        <CardFooter className="text-small justify-between">
+                          <b>{item.title}</b>
+                          <p className="text-default-500">{item.price}</p>
+                        </CardFooter>
+                      </Card>
+                    ))}
+                  </div> 
+                </div>
               </Tab>
-            )}
+              <Tab key="electronics" title="Electronics">
+                <div className="flex justify-center">
+                  <div className="gap-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-7 xl:gap-16">
+                    {listE.map((item, index) => (
+                      <Card className="flex justify-start" shadow="sm" key={index} isPressable onPress={() => console.log("item pressed")}>
+                        <CardBody className="overflow-visible p-0">
+                          <Image
+                            shadow="sm"
+                            radius="lg"
+                            width="100%"
+                            alt={item.title}
+                            className="max-w-[200px] w-[170px] object-cover h-[180px]"
+                            src={item.img}
+                          />
+                        </CardBody>
+                        <CardFooter className="text-small justify-between">
+                          <b>{item.title}</b>
+                          <p className="text-default-500">{item.price}</p>
+                        </CardFooter>
+                      </Card>
+                    ))}
+                  </div> 
+                </div>
+              </Tab>
+              <Tab key="skinCare" title="Skin Care">
+                <div className="flex justify-center">
+                  <div className="gap-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-7 xl:gap-16">
+                    {listS.map((item, index) => (
+                      <Card className="flex justify-start" shadow="sm" key={index} isPressable onPress={() => console.log("item pressed")}>
+                        <CardBody className="overflow-visible p-0">
+                          <Image
+                            shadow="sm"
+                            radius="lg"
+                            width="100%"
+                            alt={item.title}
+                            className="max-w-[200px] w-[170px] object-cover h-[180px]"
+                            src={item.img}
+                          />
+                        </CardBody>
+                        <CardFooter className="text-small justify-between">
+                          <b>{item.title}</b>
+                          <p className="text-default-500">{item.price}</p>
+                        </CardFooter>
+                      </Card>
+                    ))}
+                  </div> 
+                </div>
+              </Tab>
+
           </Tabs>
         </div>
       </div>
