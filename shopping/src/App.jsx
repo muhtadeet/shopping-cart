@@ -8,7 +8,6 @@ export default function App() {
     <>
       <BrowserRouter>
       <Routes>
-          {/* <Navmenu /> */}
           <Route index element={<Home />} />
           <Route path='/home' element={<Home />} />
           <Route path='/products' element={<Products />} />
