@@ -61,7 +61,7 @@ export default function ProdPage() {
           <CardHeader
             shadow={false}
             floated={false}
-            className="m-0 w-2/5 shrink-0 hidden md:block rounded-r-none"
+            className="m-0 w-2/5 shrink-0 md:block rounded-r-none"
           >
             <img
               src={image}
