@@ -1,4 +1,4 @@
-import {Badge,Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
+import {Badge, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@nextui-org/react";
 import {
   Card,
   CardHeader,
@@ -13,7 +13,7 @@ export default function CartComponent() {
   return (
     <div>
       <Badge content="1" color='danger'>
-          <Button onPress={onOpen} isIconOnly color="transparent" className="text-black transition duration-300 ease-in-out hover:text-blue-gray-400" aria-label="Like">
+          <Button onPress={onOpen} isIconOnly color="transparent" className="text-black transition duration-300 ease-in-out hover:text-blue-gray-400">
             <HeartIcon />
           </Button> 
           <Modal 
