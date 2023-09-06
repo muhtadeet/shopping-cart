@@ -26,7 +26,7 @@ export default function Navmenu() {
       </NavbarContent>
 
       <NavbarMenu className="max-w-[40%] sm:max-w-sm z-10">
-          <NavbarMenuItem>
+          <NavbarMenuItem className="mt-10">
             <Link
               className="w-full pt-3 text-black transition duration-300 ease-in-out hover:text-blue-gray-400"
               href="/products"
@@ -37,7 +37,7 @@ export default function Navmenu() {
           </NavbarMenuItem>
           <NavbarMenuItem>
             <Link
-              className="w-full pt-3 text-black transition duration-300 ease-in-out hover:text-blue-gray-400"
+              className="w-full pt-3 mt-1 text-black transition duration-300 ease-in-out hover:text-blue-gray-400"
               href="/categories"
               size="lg"
             >

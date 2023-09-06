@@ -1,84 +1,12 @@
 import {Tabs, Tab, Card, CardBody, Image, CardFooter} from "@nextui-org/react";
 import Navmenu from "./Navmenu";
 import FooterComp from './FooterComp'
+import { list } from './Data'
+import { listE } from './Data'
+import { listS } from './Data'
+import { Link } from 'react-router-dom'
 
 export default function Categories() {
-  const list = [
-    {
-      title: "Orange",
-      img: "/images/fruit-1.jpeg",
-      price: "$5.50",
-    },
-    {
-      title: "Tangerine",
-      img: "/images/fruit-2.jpeg",
-      price: "$3.00",
-    },
-    {
-      title: "Raspberry",
-      img: "/images/fruit-3.jpeg",
-      price: "$10.00",
-    },
-    {
-      title: "Lemon",
-      img: "/images/fruit-4.jpeg",
-      price: "$5.30",
-    },
-    {
-      title: "Avocado",
-      img: "/images/fruit-5.jpeg",
-      price: "$15.70",
-    },
-    {
-      title: "Lemon 2",
-      img: "/images/fruit-6.jpeg",
-      price: "$8.00",
-    },
-    {
-      title: "Banana",
-      img: "/images/fruit-7.jpeg",
-      price: "$7.50",
-    },
-    {
-      title: "Watermelon",
-      img: "/images/fruit-8.jpeg",
-      price: "$12.20",
-    },
-  ];
-  const listE = [
-    {
-      title: "Lemon 2",
-      img: "/images/fruit-6.jpeg",
-      price: "$8.00",
-    },
-    {
-      title: "Banana",
-      img: "/images/fruit-7.jpeg",
-      price: "$7.50",
-    },
-    {
-      title: "Watermelon",
-      img: "/images/fruit-8.jpeg",
-      price: "$12.20",
-    },
-  ];
-  const listS = [
-    {
-      title: "Orange",
-      img: "/images/fruit-1.jpeg",
-      price: "$5.50",
-    },
-    {
-      title: "Tangerine",
-      img: "/images/fruit-2.jpeg",
-      price: "$3.00",
-    },
-    {
-      title: "Raspberry",
-      img: "/images/fruit-3.jpeg",
-      price: "$10.00",
-    },
-  ];
 
   return (
     <div>
@@ -93,6 +21,11 @@ export default function Categories() {
                 <div className="flex justify-center">
                   <div className="gap-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-7 xl:gap-16">
                     {list.map((item, index) => (
+                      <div key={index}>
+                      <Link
+                      onClick={() => window.top(0, 0)}
+                      to={`/product/${item.id}`}
+                    >
                       <Card className="flex justify-start" shadow="sm" key={index} isPressable onPress={() => console.log("item pressed")}>
                         <CardBody className="overflow-visible p-0">
                           <Image
@@ -106,9 +39,11 @@ export default function Categories() {
                         </CardBody>
                         <CardFooter className="text-small justify-between">
                           <b>{item.title}</b>
-                          <p className="text-default-500">{item.price}</p>
+                          <p className="text-default-500">${item.price}</p>
                         </CardFooter>
                       </Card>
+                      </Link>
+                      </div>
                     ))}
                   </div> 
                 </div>
@@ -117,6 +52,11 @@ export default function Categories() {
                 <div className="flex justify-center">
                   <div className="gap-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-7 xl:gap-16">
                     {listE.map((item, index) => (
+                      <div key={index}>
+                      <Link
+                      onClick={() => window.top(0, 0)}
+                      to={`/product/${item.id}`}
+                    >
                       <Card className="flex justify-start" shadow="sm" key={index} isPressable onPress={() => console.log("item pressed")}>
                         <CardBody className="overflow-visible p-0">
                           <Image
@@ -130,9 +70,11 @@ export default function Categories() {
                         </CardBody>
                         <CardFooter className="text-small justify-between">
                           <b>{item.title}</b>
-                          <p className="text-default-500">{item.price}</p>
+                          <p className="text-default-500">${item.price}</p>
                         </CardFooter>
                       </Card>
+                      </Link>
+                      </div>
                     ))}
                   </div> 
                 </div>
@@ -141,6 +83,11 @@ export default function Categories() {
                 <div className="flex justify-center">
                   <div className="gap-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-7 xl:gap-16">
                     {listS.map((item, index) => (
+                      <div key={index}>
+                      <Link
+                      onClick={() => window.top(0, 0)}
+                      to={`/product/${item.id}`}
+                    >
                       <Card className="flex justify-start" shadow="sm" key={index} isPressable onPress={() => console.log("item pressed")}>
                         <CardBody className="overflow-visible p-0">
                           <Image
@@ -154,9 +101,11 @@ export default function Categories() {
                         </CardBody>
                         <CardFooter className="text-small justify-between">
                           <b>{item.title}</b>
-                          <p className="text-default-500">{item.price}</p>
+                          <p className="text-default-500">${item.price}</p>
                         </CardFooter>
                       </Card>
+                      </Link>
+                      </div>
                     ))}
                   </div> 
                 </div>
