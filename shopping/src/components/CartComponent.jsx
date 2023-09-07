@@ -24,7 +24,7 @@ export default function CartComponent() {
   };
 
   const calcPrice = (quantity) => {
-    return quantity * list[0].price;
+    return quantity * item[0].price;
   };
   const {isOpen, onOpen, onOpenChange} = useDisclosure();
   const {
