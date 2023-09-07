@@ -6,7 +6,7 @@
     font-size: 1rem;
     position: absolute;
     transform: translate(-50%);
-    top: -100%;
+    bottom: -100%;
     left: 50%;
     border-radius: 20px;
 }
@@ -21,18 +21,18 @@
 
 @keyframes slidein {
     0% {
-        top: -100%;
+        bottom: -100%;
     }
 
     40% {
-        top: 90px;
+        bottom: 90px;
     }
 
     60% {
-        top: 90px;
+        bottom: 90px;
     }
 
     100% {
-        top: -100%;
+        bottom: -100%;
     }
 }
