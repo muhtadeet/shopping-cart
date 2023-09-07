@@ -154,13 +154,13 @@ export default function CartComponent() {
                         <TableCell className="pl-6 pr-0">
                         <Chip
                           startContent={<Button isIconOnly className="h-[40px] w-[40px] font-sans" color="transparent"  onClick={decrease} ><Minus/></Button>}
-                          className="p-5 px-0 flex justify-center bg-blue-gray-400"
+                          className="lg:ml-16 2xl:ml-32 p-5 px-0 flex justify-center bg-blue-gray-400"
                           variant="shadow"
                           endContent={<Button isIconOnly className="h-[40px] w-[40px] font-sans" color="transparent"  onClick={increase} ><Plus/></Button>}
                         >
                           <p className="p-1 mx-2 text-default-50">{quantity}</p>
                         </Chip>
-                        <Button className="m-5 ml-2 h-[40px] w-[100px] flex justify-center font-sans" color="danger" onClick={() => removeItem(e.id)} >Remove Item</Button>
+                        <Button className="m-5 ml-2 h-[40px] w-[100px] lg:ml-[75px] 2xl:ml-[140px] flex justify-center font-sans" color="danger" onClick={() => removeItem(e.id)} >Remove Item</Button>
                         </TableCell>
                       </TableRow>
                     )})}
