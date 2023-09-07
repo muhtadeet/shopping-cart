@@ -9,9 +9,7 @@ import {
   CardBody,
   Typography, Carousel} from "@material-tailwind/react";
 import { useParams } from "react-router";
-import { Button, Chip } from "@nextui-org/react";
-import {Plus} from './Signs'
-import {Minus} from './Signs'
+import { Button } from "@nextui-org/react";
 import { useCart } from 'react-use-cart'
 
 export const CartContext = createContext();
@@ -20,29 +18,11 @@ export default function ProdPage() {
   const { id } = useParams();
   const item = list.filter((item) => item.id === parseInt(id));
 
-  const [quantity, setQuantity] = useState(1);
   const [image] = useState(item[0].img);
   const [image2] = useState(item[0].img2);
   const [image3] = useState(item[0].img3);
 
-  // const { addToCart } = useContext(CartContext);
   const { addItem } = useCart();
-
-  const increase = () => {
-    if (quantity >= 1) {
-      setQuantity(quantity + 1);
-    }
-  };
-
-  const decrease = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
-
-  const calcPrice = (quantity) => {
-    return quantity * item[0].price;
-  };
 
   const [notify, setNotify] = useState(false);
 
@@ -102,28 +82,15 @@ export default function ProdPage() {
             />
       </Carousel>
           </CardHeader>
-          <CardBody className="sm:ml-16">
+          <CardBody className="sm:ml-20 m-10 sm:mt-24">
             <Typography variant="h2" color="blue-gray" className="mb-2 flex justify-center">
             {item[0].title}
             </Typography>
             <Typography className="flex justify-center m-5">
               {item[0].desc}
             </Typography>
-            <Typography variant="h6" color="blue-gray" className="mb-2 mt-10 flex justify-center">
-                Quantity
-            </Typography>
-                <div className="flex flex-row justify-center">
-                <Chip
-                  startContent={<Button isIconOnly className="h-[40px] w-[40px] font-sans" color="transparent" onClick={decrease}><Minus/></Button>}
-                  className="p-5 px-0 bg-blue-gray-400"
-                  variant="shadow"
-                  endContent={<Button isIconOnly className="h-[40px] w-[40px] font-sans" color="transparent" onClick={increase}><Plus/></Button>}
-                >
-                  <p className="p-1 mx-2 text-default-50">{quantity}</p>
-                </Chip>
-                </div>
                 <Typography variant="h5" color="blue-gray" className=" p-7 flex justify-center my-5">
-                Price: ${calcPrice(quantity)}
+                Price: ${item[0].price}
                 </Typography>
                 <div className="flex justify-center">
                 <Button variant="bordered" className="h-[40px] w-[90px] font-sans text-amber-600 border-amber-600 border-2 hover:bg-amber-600 hover:text-white"
