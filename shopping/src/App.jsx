@@ -2,19 +2,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
 import Products from './components/Products'
 import Categories from './components/Categories'
-import ProdPage, { CartContext } from './components/ProdPage'
-import { useState } from "react";
+import ProdPage from './components/ProdPage'
+import { CartProvider } from 'react-use-cart'
 
 export default function App() {
-  const [cartItem, setCartItem] = useState([]);
-
-  const addToCart = (item) => {
-    setCartItem([...cartItem, item]);
-  }
   return (
-    <>
-    <CartContext.Provider value={{ cartItem, addToCart, setCartItem }}>
+    <>   
       <BrowserRouter>
+      <CartProvider>
       <Routes>
           <Route index element={<Home />} />
           <Route path='/home' element={<Home />} />
@@ -22,8 +17,8 @@ export default function App() {
           <Route path='/categories' element={<Categories />} />
           <Route path="/product/:id" element={<ProdPage />} />
       </Routes>
+      </CartProvider>
       </BrowserRouter>
-      </CartContext.Provider>
     </>
   )
 }
