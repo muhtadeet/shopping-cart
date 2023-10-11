@@ -9,9 +9,9 @@ export default function Products() {
   return (
     <div>
       <Navmenu/>
-      <b className="flex justify-center text-xl m-7">Our Products</b>
+      <b className="flex justify-center text-xl m-7 font-lato">Our Products</b>
       <div className="flex justify-center">
-        <div className="gap-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-7 xl:gap-16">
+        <div className="gap-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-7 xl:gap-16 sm:mb-12">
           {list.map((item, index) => (
             <div key={index}>
             <Link
@@ -30,8 +30,8 @@ export default function Products() {
                 />
               </CardBody>
               <CardFooter className="text-small justify-between">
-                <b>{item.title}</b>
-                <p className="text-default-500">${item.price}</p>
+                <b className="font-reemkufi">{item.title}</b>
+                <p className="text-default-500 font-lato">${item.price}</p>
               </CardFooter>
             </Card>
             </Link>

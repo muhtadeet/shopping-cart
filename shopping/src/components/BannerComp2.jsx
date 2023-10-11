@@ -11,14 +11,14 @@ import {
       <div className="flex justify-center my-10">
         <Card className=" w-[30rem] md:w-full max-w-4xl mx-5 flex-row">
           <CardBody>
-            <Typography variant="h4" color="blue-gray" className="mb-2">
+            <Typography variant="h4" color="blue-gray" className="font-reemkufi mb-2">
             JUST FOR YOU
             </Typography>
-            <Typography color="gray" className="mb-8 font-normal">
+            <Typography color="gray" className="mb-8 font-lato font-normal">
             Our Products are all made by standard sizes so that you can match them as you desire.
             </Typography>
             <a href="#" className="inline-block">
-              <Button variant="gradient" className="flex items-center gap-2">
+              <Button variant="gradient" className="flex items-center font-reemkufi gap-2">
                 Shop Now
               </Button>
             </a>

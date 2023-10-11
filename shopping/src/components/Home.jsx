@@ -13,11 +13,11 @@ export default function Home() {
   return (
     <div>
       <Navmenu />
-      <b className="flex justify-center text-xl m-3">Trending now</b>
+      <b className="flex justify-center font-lato text-xl m-3">Trending now</b>
 
       <Carousel/>
       
-      <b className="flex justify-center text-xl m-7">Popular Products</b>
+      <b className="flex justify-center text-xl m-7 font-lato">Popular Products</b>
       <div className="flex justify-center">
         <div className="gap-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-7 xl:gap-16">
           {list.map((item, index) => (
@@ -38,8 +38,8 @@ export default function Home() {
                 />
               </CardBody>
               <CardFooter className="text-small justify-between">
-                <b>{item.title}</b>
-                <p className="text-default-500">${item.price}</p>
+                <b className="font-reemkufi">{item.title}</b>
+                <p className="text-default-500 font-lato">${item.price}</p>
               </CardFooter>
             </Card>
             </Link>
@@ -50,7 +50,7 @@ export default function Home() {
 
       <BannerComp/>
 
-      <b className="flex justify-center text-xl m-7">You might also like</b>
+      <b className="flex justify-center text-xl m-7 font-lato">You might also like</b>
       <div className="flex justify-center">
         <div className="gap-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-7 xl:gap-16">
           {list2.map((item, index) => (
@@ -71,8 +71,8 @@ export default function Home() {
                 />
               </CardBody>
               <CardFooter className="text-small justify-between">
-                <b>{item.title}</b>
-                <p className="text-default-500">${item.price}</p>
+                <b className="font-reemkufi">{item.title}</b>
+                <p className="text-default-500 font-lato">${item.price}</p>
               </CardFooter>
             </Card>
             </Link>

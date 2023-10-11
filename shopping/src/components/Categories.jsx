@@ -12,12 +12,12 @@ export default function Categories() {
     <div>
       <Navmenu/>
 
-      <b className="flex justify-center text-xl m-7">Categories</b>
+      <b className="flex justify-center text-xl m-7 font-lato">Categories</b>
       <div className="flex justify-center">
         <div className="w-full max-w-4xl mx-5 flex-col sm:min-h-[58vh]">
-          <Tabs>
+          <Tabs className="flex justify-center">
             
-              <Tab key="all" title="All">
+              <Tab key="all" title="All" className="font-reemkufi">
                 <div className="flex justify-center">
                   <div className="gap-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-7 xl:gap-16">
                     {list.map((item, index) => (
@@ -39,7 +39,7 @@ export default function Categories() {
                         </CardBody>
                         <CardFooter className="text-small justify-between">
                           <b>{item.title}</b>
-                          <p className="text-default-500">${item.price}</p>
+                          <p className="text-default-500 font-lato">${item.price}</p>
                         </CardFooter>
                       </Card>
                       </Link>
@@ -48,7 +48,7 @@ export default function Categories() {
                   </div> 
                 </div>
               </Tab>
-              <Tab key="electronics" title="Electronics">
+              <Tab key="electronics" title="Electronics" className="font-reemkufi">
                 <div className="flex justify-center">
                   <div className="gap-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-7 xl:gap-16">
                     {listE.map((item, index) => (
@@ -70,7 +70,7 @@ export default function Categories() {
                         </CardBody>
                         <CardFooter className="text-small justify-between">
                           <b>{item.title}</b>
-                          <p className="text-default-500">${item.price}</p>
+                          <p className="text-default-500 font-lato">${item.price}</p>
                         </CardFooter>
                       </Card>
                       </Link>
@@ -79,7 +79,7 @@ export default function Categories() {
                   </div> 
                 </div>
               </Tab>
-              <Tab key="skinCare" title="Skin Care">
+              <Tab key="skinCare" title="Skin Care" className="font-reemkufi">
                 <div className="flex justify-center">
                   <div className="gap-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:gap-7 xl:gap-16">
                     {listS.map((item, index) => (
@@ -101,7 +101,7 @@ export default function Categories() {
                         </CardBody>
                         <CardFooter className="text-small justify-between">
                           <b>{item.title}</b>
-                          <p className="text-default-500">${item.price}</p>
+                          <p className="text-default-500 font-lato">${item.price}</p>
                         </CardFooter>
                       </Card>
                       </Link>

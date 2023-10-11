@@ -8,6 +8,10 @@ export default withMT({
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
+    fontFamily: {
+      reemkufi: ['Reem Kufi', 'sans-serif'],
+      lato: ['Lato', 'sans-serif']
+    },
     extend: {},
   },
   plugins: [nextui()],
