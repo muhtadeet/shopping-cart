@@ -32,6 +32,14 @@ export default function ProdPage() {
   return (
     <>
     <Navmenu />
+    <div className='p-5'>
+        <div
+          onAnimationEnd={() => setNotify(false)}
+          className={`notify ${notify ? "slide-in" : ""}`}
+        >
+          <p>Item has been added to the cart &nbsp; 🛒</p>
+        </div>
+      </div>     
     <div className="sm:min-h-[70vh]">
       <div className="flex justify-center my-10">
         <Card className=" sm:w-[30rem] md:w-full max-w-4xl mx-5 flex-col sm:flex-row">
@@ -97,15 +105,7 @@ export default function ProdPage() {
           </CardBody>
         </Card>
       </div>
-      </div>
-      <div className='p-5'>
-        <div
-          onAnimationEnd={() => setNotify(false)}
-          className={`notify ${notify ? "slide-in" : ""}`}
-        >
-          <p>Item has been added to the cart &nbsp; 🛒</p>
-        </div>
-      </div>       
+      </div>  
       <FooterComp />
     </>
   )
